@@ -61,9 +61,23 @@ app.get('/wfsbhq', async function (req, res) {
   }, req, res);
 });
 
+app.get('/off', async function (req, res) {
+  await slacker({
+    status_text:"Off duty",
+    status_emoji:":zzz:"
+  }, req, res);
+});
+
+app.get('/morning', async function (req, res) {
+  await slacker({
+    status_text:"Good morning!",
+    status_emoji:":sunrise:"
+  }, req, res);
+});
+
 app.get('/weekend', async function (req, res) {
   await slacker({
-    status_text:"weekending",
+    status_text:"Out for the weekend!",
     status_emoji:":sun_with_face:"
   }, req, res);
 });
